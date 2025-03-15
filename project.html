@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        /* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: #a4e1cd;
-    padding: 30px;
-    border-radius: 89087989px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 203523px;
-}
-
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-label {
-    text-align: left;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-input, select {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #e3f38a;
-    border-radius: 5px;
-}
-
-input[type="date"], select {
-    cursor: pointer;
-}
-
-button {
-    padding: 1000px;
-    font-size: 1.1em;
-    background-color: #3e32e1;
-    color: white;
-    border: none;
-    border-radius: 55576px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3975bd;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.checkbox-group input {
-    transform: scale(1.2);
-}
-
-
-    </style>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Registration</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .additional-options {
+      margin-top: 15px;
+    }
+
+    .additional-options a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .additional-options a:hover {
+      text-decoration: underline;
+    }
+
+    .social-login {
+      margin-top: 20px;
+    }
+
+    .social-login button {
+      margin: 5px;
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+    }
+
+    .social-login button:hover {
+      background-color: #f4f4f4;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Exam Registration Form</h1>
-
-        <form action="#" method="POST" class="registration-form">
-            <label for="full-name">Full Name</label>
-           
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob" required>
-
-            <label for="exam">Select Exam</label>
-            <select id="exam" name="exam" required>
-                <option value="">--Select an exam--</option>
-                <option value="math">Mathematics</option>
-                <option value="science">Science</option>
-                <option value="english">English</option>
-            </select>
-
-            <label for="exam-date">Preferred Exam Date</label>
-            <input type="date" id="exam-date" name="exam-date" required>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the terms and conditions</label>
-            </div>
-
-            <button type="submit">Register</button>
-        </form>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="additional-options">
+      <a href="#" id="forgot-password">Forgot Password?</a>
+      <a href="#" id="signup">Sign Up</a>
     </div>
+    <div class="social-login">
+      <p>Or login with:</p>
+      <button id="google-login">Google</button>
+      <button id="facebook-login">Facebook</button>
+    </div>
+  </div>
 
+  <script>
+    // JavaScript
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Basic validation
+      if (!email || !password) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Simulate backend login (replace with actual API call)
+      const mockUsers = [
+        { email: 'user@example.com', password: 'password123' }
+      ];
+      const user = mockUsers.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        alert('Login successful!');
+        // Redirect to dashboard or home page
+        // window.location.href = '/dashboard';
+      } else {
+        alert('Invalid credentials');
+      }
+    });
+
+    document.getElementById('forgot-password').addEventListener('click', function (e) {
+      e.preventDefault();
+      alert('Redirecting to password recovery page...');
+      // window.location.href = '/forgot-password';
+    });
+
+    document.getElementById('signup').addEventListener('click', function (e) {
+      e.preventDefault();
+      alert('Redirecting to signup page...');
+      // window.location.href = '/signup';
+    });
+
+    // Social login handlers
+    document.getElementById('google-login').addEventListener('click', function () {
+      alert('Redirecting to Google login...');
+      // Implement Google OAuth here
+    });
+
+    document.getElementById('facebook-login').addEventListener('click', function () {
+      alert('Redirecting to Facebook login...');
+      // Implement Facebook OAuth here
+    });
+  </script>
 </body>
 </html>
